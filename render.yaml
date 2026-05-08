@@ -17,7 +17,7 @@ services:
     name: celery-worker
     runtime: docker
     dockerfilePath: ./Dockerfile
-    dockerCommand: celery -A app.celery_app.celery worker --loglevel=info
+    dockerCommand: celery -A src.services.celery_app.celery worker --loglevel=info
     envVars:
       - key: REDIS_URL
         fromService:

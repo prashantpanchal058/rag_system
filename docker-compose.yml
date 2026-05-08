@@ -12,7 +12,7 @@ services:
         condition: service_healthy
     volumes:
       - .:/app
-    command: uvicorn app.main:app --host 0.0.0.0 --port 10000 --reload
+    command: uvicorn src.main:app --host 0.0.0.0 --port 10000 --reload
 
   celery-worker:
     build: .
@@ -23,7 +23,7 @@ services:
         condition: service_healthy
     volumes:
       - .:/app
-    command: celery -A app.celery_app.celery worker --loglevel=info -Q celery  # ← same queue
+    command: celery -A src.services.celery_app.celery worker --loglevel=info -Q celery  # ← same queue
 
   redis:
     image: redis:alpine
