@@ -36,7 +36,6 @@ chess==1.11.2
 chromadb==1.5.7
 clerk-backend-api==5.0.6
 clerk-sdk==1.1.1
-clerk-sdk-python==0.1.0
 click==8.3.2
 click-didyoumean==0.3.1
 click-plugins==1.1.1.2
